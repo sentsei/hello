@@ -1,0 +1,256 @@
+:root {
+    --primary-pink: #ff5e84;
+    --secondary-pink: #fff0f3;
+    --text-dark: #4a4a4a;
+    --shadow: 0 10px 30px rgba(255, 94, 132, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fcf6f7;
+    background-image: radial-gradient(#ffccd5 1px, transparent 1px);
+    background-size: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 182, 193, 0.4);
+}
+
+.sparkle {
+    color: var(--primary-pink);
+    font-size: 24px;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+h2 {
+    color: var(--text-dark);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+p {
+    color: #7d7d7d;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.btn {
+    background: var(--primary-pink);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(255, 94, 132, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 94, 132, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Step Screen Management */
+.step {
+    display: none;
+    width: 100%;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.step.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Step 2 specific (Yes/No choices) */
+.choice-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    height: 50px;
+}
+
+.btn-yes {
+    position: absolute; 
+    left: 60px;
+}
+
+.btn-no {
+    background: #f1f1f1;
+    color: #888;
+    box-shadow: none;
+    position: absolute;
+    right: 60px;
+    transition: all 0.1s ease;
+}
+
+.btn-no:hover {
+    background: #e4e4e4;
+    color: #555;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Grid Layout */
+.grid-selection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.grid-item {
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.grid-item .icon {
+    font-size: 22px;
+}
+
+.grid-item:hover {
+    border-color: var(--primary-pink);
+    background: var(--secondary-pink);
+    transform: translateY(-2px);
+}
+
+/* Input Form */
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid #eee;
+    border-radius: 50px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    text-align: center;
+}
+
+.input-field:focus {
+    border-color: var(--primary-pink);
+}
+
+/* Summary Receipt */
+.receipt {
+    background: #fdf8f9;
+    border: 1px dashed #ffb6c1;
+    border-radius: 16px;
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+    border-bottom: 1px solid #fff0f3;
+    padding-bottom: 8px;
+}
+
+.receipt-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.receipt-label {
+    color: #999;
+    font-weight: 400;
+}
+
+.receipt-value {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.start-over {
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.start-over:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.hearts-animation {
+    font-size: 30px;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
