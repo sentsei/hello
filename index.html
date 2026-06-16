@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I have a question... 🥺</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card" id="main-card">
+        
+        <div class="step active" id="step-1">
+            <div class="sparkle">✨🌸✨</div>
+            <h2>Hey there!</h2>
+            <p>I've been yearning to tell you something for a while now... but I'm a bit shy.</p>
+            <button class="btn" onclick="nextStep(1, 2)">What is it? ➔</button>
+        </div>
+
+        <div class="step" id="step-2">
+            <div class="sparkle">🥺👉👈</div>
+            <h2>Will you go out with me?</h2>
+            <p>I promise to buy you snacks 🥺</p>
+            <div class="choice-container" id="choice-box">
+                <button class="btn btn-yes" onclick="acceptProposal()">Yes 💖</button>
+                <button class="btn btn-no" id="no-btn" onmouseover="flyAway()" onclick="flyAway()">Think again!</button>
+            </div>
+        </div>
+
+        <div class="step" id="step-3">
+            <div class="hearts-animation">💖💖💖</div>
+            <h2>YAAAAY!!!</h2>
+            <p>You just made me the happiest person alive!<br><strong>It's a date! ➔</strong></p>
+        </div>
+
+        <div class="step" id="step-4">
+            <h2>What kind of date?</h2>
+            <p>Pick something you enjoy!</p>
+            <div class="grid-selection">
+                <div class="grid-item" onclick="selectDateType('Coffee Date', '☕')">
+                    <span class="icon">☕</span><span>Coffee Date</span>
+                </div>
+                <div class="grid-item" onclick="selectDateType('Dinner Date', '🍝')">
+                    <span class="icon">🍝</span><span>Dinner Date</span>
+                </div>
+                <div class="grid-item" onclick="selectDateType('Movie Night', '🎬')">
+                    <span class="icon">🎬</span><span>Movie Night</span>
+                </div>
+                <div class="grid-item" onclick="selectDateType('Museum/Gallery', '🖼️')">
+                    <span class="icon">🖼️</span><span>Museum/Gallery</span>
+                </div>
+                <div class="grid-item" onclick="selectDateType('Nature Walk', '🌿')">
+                    <span class="icon">🌿</span><span>Nature Walk</span>
+                </div>
+                <div class="grid-item" onclick="selectDateType('Gaming Session', '🎮')">
+                    <span class="icon">🎮</span><span>Gaming Session</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" id="step-5">
+            <h2>Where should we go?</h2>
+            <p>Let's pick the perfect spot.</p>
+            <div class="grid-selection">
+                <div class="grid-item" onclick="selectLocation('Your favorite spot', '📍')">
+                    <span class="icon">📍</span><span>Your favorite spot</span>
+                </div>
+                <div class="grid-item" onclick="selectLocation('My favorite spot', '⭐')">
+                    <span class="icon">⭐</span><span>My favorite spot</span>
+                </div>
+                <div class="grid-item" onclick="selectLocation('Surprise me!', '🎁')">
+                    <span class="icon">🎁</span><span>Surprise me!</span>
+                </div>
+                <div class="grid-item" onclick="selectLocation('We\'ll decide together', '🤝')">
+                    <span class="icon">🤝</span><span>We'll decide together</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="step" id="step-6">
+            <div class="sparkle">📱</div>
+            <h2>How can I reach you?</h2>
+            <p>Share your phone number or social media.</p>
+            <div class="input-group">
+                <input type="text" id="contact-input" class="input-field" placeholder="Phone, Instagram, etc..." required>
+            </div>
+            <button class="btn" onclick="submitContact()">Send 🚀</button>
+        </div>
+
+        <div class="step" id="step-7">
+            <div class="sparkle">🎉✅</div>
+            <h2>Perfect!</h2>
+            <p>I'll reach out to you soon! 😉</p>
+            
+            <div class="receipt">
+                <div class="receipt-item">
+                    <span class="receipt-label">📅 Date Type</span>
+                    <span class="receipt-value" id="summary-date">Coffee Date</span>
+                </div>
+                <div class="receipt-item">
+                    <span class="receipt-label">📍 Location</span>
+                    <span class="receipt-value" id="summary-loc">Surprise me!</span>
+                </div>
+                <div class="receipt-item">
+                    <span class="receipt-label">👤 Contact</span>
+                    <span class="receipt-value" id="summary-contact">-</span>
+                </div>
+            </div>
+
+            <span class="start-over" onclick="resetForm()">Start over</span>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
